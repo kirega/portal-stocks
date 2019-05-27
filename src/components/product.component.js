@@ -41,36 +41,35 @@ class Product extends PureComponent {
         <MainNavbar/>
           <h3>Products</h3>
             <form className="col-6 mx-auto">
-            <div className="form-group">
-            <h4>Add new product</h4>
-            </div>
-            <div className="form-group">
-            <label>Name</label>
-            <input type="text" className="form-control" aria-describedby="name" placeholder="Enter product name"/>
-            </div>
-            <div className="form-group">
-            <label>Price</label>
-            <input type="number" min="0.01" step="0.01" className="form-control" placeholder="price"/>
-            </div>
-            <div className="form-group">
-            <label>Unit of Measure</label>
-            <select className="form-control">
-            <option>-</option>
-            {SELECTION.map((value, index) => {
-              return( <option key={index}>{value}</option>);
-            })}
-            </select>
-            </div>
-            <div className="form-row">
-            <div className="form-group col-6">
-            <button type="submit" className="btn btn-primary col">Submit</button>
-            </div>
-            <div className="form-group col-6">
-            <button type="button" className="btn btn-danger col">Close</button>
-            </div>
-            </div>
+              <div className="form-group">
+                <h4>Add new product</h4>
+              </div>
+              <div className="form-group">
+                <label>Name</label>
+                <input type="text" className="form-control" aria-describedby="name" placeholder="Enter product name"/>
+              </div>
+              <div className="form-group">
+                <label>Price</label>
+                <input type="number" min="0.01" step="0.01" className="form-control" placeholder="price"/>
+              </div>
+              <div className="form-group">
+                <label>Unit of Measure</label>
+                <select className="form-control">
+                  <option>-</option>
+                  { SELECTION.map((value, index) => {
+                    return (<option key={ index }>{ value }</option>);
+                  }) }
+                </select>
+              </div>
+              <div className="form-row">
+                <div className="form-group col-6">
+                  <button type="submit" className="btn btn-primary col">Submit</button>
+                </div>
+                <div className="form-group col-6">
+                  <button type="button" className="btn btn-danger col">Close</button>
+                </div>
+              </div>
             </form>
-
           <table className="table table-dark">
             <thead>
             <tr>
@@ -93,8 +92,6 @@ class Product extends PureComponent {
             </tbody>
           </table>
         </div>
-      </div>
-
     );
   };
 }
