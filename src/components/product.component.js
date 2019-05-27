@@ -21,7 +21,7 @@ class Product extends PureComponent {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8000/products/')
+    axios.get('http://prox-stock.herokuapp.com:8000/products/')
       .then(
         res => {
           this.setState( prevState => {
