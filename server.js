@@ -12,4 +12,4 @@ app.use(express.static(path.join(__dirname, 'dist/')));
 
 // wildcard route
 app.get('*', (req, res) => {
-  res.sendFile(__dirname + 'index.html');});
+  res.sendFile(__dirname + '/dist/index.html');});
