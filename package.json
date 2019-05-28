@@ -50,11 +50,11 @@
     "webpack-dev-server": "^3.2.1"
   },
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open",
-    "start": "node server.js",
+    "start": "npm run build && NODE_ENV=production node server.js",
+    "dev-start": "webpack-dev-server --mode development --open 'Google Chrome'",
     "build": "webpack --mode production",
-    "heroku-postbuild": "webpack -p ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "webpack -p"
   },
   "keywords": [
     "react",
