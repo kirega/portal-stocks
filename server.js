@@ -11,6 +11,5 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 app.use(express.static(path.join(__dirname, 'dist/')));
 
 // wildcard route
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + 'index.html');
-});
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + 'index.html');});
