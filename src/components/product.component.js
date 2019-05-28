@@ -37,7 +37,7 @@ class Product extends PureComponent {
   }
 
   getProducts() {
-    axios.get('http://localhost:8000/products/')
+    axios.get('https://prox-stock.herokuapp.com/products/')
       .then(
         res => {
           this.setState(prevState => {
@@ -55,7 +55,7 @@ class Product extends PureComponent {
     const { initialForm } = this.state;
     if (Object.keys(initialForm).length > 0) {
       console.log(initialForm);
-      axios.post(`http://localhost:8000/products/`, initialForm).then(
+      axios.post(`https://prox-stock.herokuapp.com/products/`, initialForm).then(
         (res) => {
           this.getProducts();
         }
@@ -66,7 +66,7 @@ class Product extends PureComponent {
   }
 
   deleteProduct(id) {
-    axios.delete(`http://localhost:8000/products/${ id }`).then(
+    axios.delete(`https://prox-stock.herokuapp.com/products/${ id }`).then(
       () => {
         this.getProducts();
       }
@@ -75,7 +75,7 @@ class Product extends PureComponent {
   updateProduct(e) {
     e.preventDefault();
     const {initialForm} = this.state;
-    axios.put(`http://localhost:8000/products/${ initialForm.id }`, initialForm).then(
+    axios.put(`https://prox-stock.herokuapp.com/products/${ initialForm.id }`, initialForm).then(
       () => {
         this.getProducts();
       }
